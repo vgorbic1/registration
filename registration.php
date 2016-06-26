@@ -68,20 +68,16 @@ if(isset($_POST['btn-register'])) {
 			$key = base64_encode($id);
 			$id = $key;			
 			$message = "Hello $fname $lname,
-						<br /><br />
-						Welcome to NGC 2017<br/>
+						Welcome to NGC 2017
 						To complete your registration  please click the following link
-						<br />
-						<a href='http://localhost/x/verify.php?id=$id&code=$code'>Click HERE to Activate</a>
-						<br /><br />
-						Thanks,<br>
-						NGC 2017 Team";						
-			$subject = "NGC 2017 Confirm Registration";						
+						<a href='http://site.com/verify.php?id=$id&code=$code'>Click HERE to Activate</a>
+						";						
+			$subject = "Registration";						
 			$reg_user->send_mail($email, $message, $subject);	
 			$msg = "<div class='alert alert-success'>
-						<strong>Almost there!</strong>  We've sent an email to $email.
-                    Please click on the link in the email to confirm your registration. 
-			  		</div>";
+				<strong>Almost there!</strong>  We've sent an email to $email.
+                    		Please click on the link in the email to confirm your registration. 
+			  	</div>";
 			$form = false;
 		} else {
 			echo "Query could not execute. Try again later.";
