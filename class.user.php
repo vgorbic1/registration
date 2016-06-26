@@ -26,7 +26,6 @@ class USER {
 	
 	public function register($title,$fname,$mname,$lname,$email,$phone,$webpage,$organization,$department,$address,$city,$state,$zip,$country,$accompany,$presentation,$student,$paper,$code,$time) {
 		try {							
-			//$password = md5($upass); 
 			$stmt = $this->conn->prepare("INSERT INTO tbl_users(userTitle,userFname,userMname,userLname,userEmail,userPhone,userWebpage,userOrganization,userDepartment,userAddress,userCity,userState,userZip,userCountry,userAccompany,userPresentation,userStudent,userPaper,tokenCode,userTimeRegistered)VALUES(:user_title,:user_fname,:user_mname,:user_lname,:user_email,:user_phone,:user_webpage,:user_organization,:user_department,:user_address,:user_city,:user_state,:user_zip,:user_country,:user_accompany,:user_presentation,:user_student,:user_paper,:activation_code,:time_registered) ");
 			$stmt->bindparam(":user_title", $title);
 			$stmt->bindparam(":user_fname", $fname);
