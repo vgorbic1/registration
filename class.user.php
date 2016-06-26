@@ -60,9 +60,9 @@ class USER {
 	
 	function send_mail($email, $message, $subject) {
 		
-		$admin_email = "admin@gmail.com"; 
+		$admin_email = "admin@site.com"; 
 		$headers = "From: " . $admin_email . "\r\n";
-				
+		// add other useful headers $headers .= "";		
 		mail($email, $subject, $message, $headers);
 
 	}	
